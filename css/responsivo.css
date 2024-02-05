@@ -1,0 +1,216 @@
+@media (max-width: 767px)  {
+
+  
+
+    .no-mobile {
+        display: none;
+    }
+
+
+    .col-one {
+        padding-left: 35px !important;
+        padding-right: 35px !important; 
+    }
+
+    .navbar-toggler {
+        background-color: var(--color-primary);
+    }
+
+   .navbar-toggler-icon {
+    padding-top: 5px;
+    color: var(--color-white);
+   }
+
+   .navbar-collapse {
+    background-color: var(--color-primary);
+    padding: 20px;
+    text-align: center;
+    border-radius: 40px;
+
+   }
+
+   .navbar-nav .nav-link {
+    color: var(--color-white)!important;
+   }
+
+   .navbar-collapse .btn-blue {
+    margin-top: 20px;
+    background-color: var(--color-white);
+    color: var(--color-primary)!important;
+   }
+
+   .banner {
+    padding: 40px 0;
+   }
+
+   .text-banner h1 {
+    font-size: 50px;
+    
+   }
+
+   .text-banner p {
+    font-size: 24px;
+   }
+
+   .btn-blue {
+    padding: 20px 30px;
+    font-size: 25px;
+   }
+
+   .title {
+    font-size: 35px;
+   }
+
+   .servicos {
+    padding-bottom: 40px;
+   }
+
+   .cardapio {
+    padding-bottom: 40px;
+   }
+
+   .container-menu {
+    padding-bottom: 15px;
+    display: flex;
+    padding-right: 10px;
+   }
+
+   .img-produto {
+    position: absolute;
+    left: 15px;
+   }
+
+   .card-item {
+    height: 160px;
+    padding-left: 110px;
+    justify-content:center;
+    align-items: start;
+   
+   }
+
+   .card-item .img-produto img {
+    width: 80px;
+   }
+
+   .title-produto {
+    margin-top: 0px !important;
+    height: 30px !important;
+    width: 100%;
+    text-align: left !important;
+   }
+
+   .descricao-produto {
+    margin: 0px !important;
+    height: 85px !important;
+    width: 100%;
+    text-align: left !important;
+   }
+
+   .price-produto {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    font-size: 22px !important;
+   }
+
+   .card-item .add-carrinho {
+    margin-top: 5px;
+   }
+
+   #itensCardapio .mb-5 {
+    margin-bottom: 15px!important;
+   }
+
+   .container-logo-footer {
+    justify-content: center;
+   }
+
+   .container-texto-footer p {
+    text-align: center;
+   }
+
+   .container-redes-footer {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    justify-content: center;
+   }
+
+   .modal-full {
+    padding: 40px 20px;
+   }
+
+   .modal-full .item-carrinho {
+    padding-left: 0;
+    padding-right: 0;
+   }
+
+   .modal-full .img-produto {
+    position: relative;
+    left: 0;
+   }
+
+   .modal-full .dados-produto {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: grid;
+   }
+
+   .modal-full .title-produto, .modal-full .price-produto {
+    font-size: 16px!important;
+   }
+
+   .modal-full .add-numero-itens {
+    padding: 2px 10px;
+   }
+
+   .m-footer .wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    
+   }
+
+   .m-footer .container {
+    height: 200px;
+   }
+
+   #btnVoltar {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    height: 80px;
+    width: 120px;
+    font-size: 20px;
+   }
+
+   #btnEtapaEndereco, #btnEtapaResumo {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    height: 80px;
+    width: 200px;
+    font-size: 20px;
+   }
+
+   .etapas {
+    scale: 90%;
+   }
+
+   .etapa {
+    font-size: 20px;
+   }
+
+   .badge-total-carrinho-2 {
+    display: none;
+   }
+
+
+   .botao-carrinho {
+    bottom: 50px;
+    right: 30px;
+
+   }
+  
+
+
+}
