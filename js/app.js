@@ -454,17 +454,15 @@ cardapio.metodos = {
 
     calcularEntrega: () => {
         if (MEU_ENDERECO !== null) {
-            // Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual Google Maps API key
-            const apiKey = 'AIzaSyC1sstwlXrdO-yPodcKn8ZfdKdWJDKw3Yg';
             const service = new google.maps.DistanceMatrixService();
+            const origin = 'Helena Piekarski Pinto, 456, Fazenda Velha, Araucária, PR, 83704650';
+            const destination = `${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}, ${MEU_ENDERECO.cidade}, ${MEU_ENDERECO.uf}, ${MEU_ENDERECO.cep}`;
             const request = {
-                origins: ["Sydney, Australia", "Melbourne, Australia"],
-                destinations: ["Brisbane, Australia", "Perth, Australia"],
+                origins: [origin],
+                destinations: [destination],
                 travelMode: 'DRIVING', // Or 'bicycling', 'transit', 'walking'
                 unitSystem: google.maps.UnitSystem.METRIC, // Or google.maps.UnitSystem.IMPERIAL
             };
-            // const origin = `${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}, ${MEU_ENDERECO.cidade}, ${MEU_ENDERECO.uf}, ${MEU_ENDERECO.cep}`;
-            // const destination = 'Helena Piekarski Pinto, 456, Fazenda Velha, Araucária, PR, 83704650'; // Replace with the actual restaurant address
 
             service.getDistanceMatrix(request, (response, status) => {
                 if (status !== 'OK') {
