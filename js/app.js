@@ -422,7 +422,7 @@ cardapio.metodos = {
             complemento: complemento
 
     }
-
+        cardapio.metodos.calcularEntrega();
         cardapio.metodos.carregarEtapa(3);
         cardapio.metodos.carregarResumo();
 
@@ -456,32 +456,26 @@ cardapio.metodos = {
         if (MEU_ENDERECO !== null) {
             // Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual Google Maps API key
             const apiKey = 'AIzaSyC1sstwlXrdO-yPodcKn8ZfdKdWJDKw3Yg';
+            const service = new google.maps.DistanceMatrixService();
+            const request = {
+                origins: ["Sydney, Australia", "Melbourne, Australia"],
+                destinations: ["Brisbane, Australia", "Perth, Australia"],
+                travelMode: 'DRIVING', // Or 'bicycling', 'transit', 'walking'
+                unitSystem: google.maps.UnitSystem.METRIC, // Or google.maps.UnitSystem.IMPERIAL
+            };
+            // const origin = `${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}, ${MEU_ENDERECO.cidade}, ${MEU_ENDERECO.uf}, ${MEU_ENDERECO.cep}`;
+            // const destination = 'Helena Piekarski Pinto, 456, Fazenda Velha, Araucária, PR, 83704650'; // Replace with the actual restaurant address
 
-            const origin = `${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}, ${MEU_ENDERECO.cidade}, ${MEU_ENDERECO.uf}, ${MEU_ENDERECO.cep}`;
-            const destination = 'Helena Piekarski Pinto, 456, Fazenda Velha, Araucária, PR, 83704650'; // Replace with the actual restaurant address
-
-            const apiUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${encodeURIComponent(origin)}&destinations=${encodeURIComponent(destination)}&key=${apiKey}`;
-
-            $.ajax({
-                url: apiUrl,
-                type: 'GET',
-                success: function (data) {
-                    if (data.status === 'OK') {
-                        const distanceText = data.rows[0].elements[0].distance.text;
-                        const distanceValue = data.rows[0].elements[0].distance.value / 1000; // Convert meters to kilometers
-                        console.log(distanceValue)
-                        const deliveryCost = cardapio.metodos.calcularCustoEntrega(distanceValue);
-
-                        VALOR_ENTREGA = deliveryCost
-                        cardapio.metodos.carregarValores();
-                    } else {
-                        cardapio.metodos.mensagem('deu pau aqui. Tente novamente.');
-                    }
-                },
-                error: function () {
-                    cardapio.metodos.mensagem('Erro ao calcular a distância. Tente novamente.');
+            service.getDistanceMatrix(request, (response, status) => {
+                if (status !== 'OK') {
+                    console.error('Error:', status);
+                    return;
                 }
+            
+                // Process the response
+                console.log(response);
             });
+
         }
     },
 
